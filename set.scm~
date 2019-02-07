@@ -1,0 +1,7 @@
+(define (adjoin-set element set)
+    (cond ((null? set) (list element))
+	  ((< element (car set)) (cons element set))
+	  ((= element (car set)) set)
+	  (else (cons (car set) (adjoin-set element (cdr set))))))
+
+(adjoin-set 10 (list 2 4 7))
